@@ -24,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $public_path = public_path('/dist/index.blade.php');
+        $this->loadViewsFrom([$public_path], 'public');
     }
 }

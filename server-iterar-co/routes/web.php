@@ -11,16 +11,40 @@
 |
 */
 
+// Redirects
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/app/{any}', function () {
 
-Route::get('/admin', function () {
-    return view('welcome');
+    $metaTitle = 'ITERAR | Emprendimiento y Start Ups';
+    $metaDescription = 'ITERAR DESCRIPTION';
+    $metaGoogleSiteVerification = '';
+    $metaAuthor = '';
+    $metaImage = '';
+    $metaDescription = '';
+    $metaKeywords = '';
+    $metaSchemaName = '';
+    $metaSchemaImage = '';
+    $metaSchemaDescription = '';
+
+    return view('app.index')
+                ->with('metaTitle', $metaTitle)
+                ->with('metaDescription', $metaDescription)
+                ->with('metaGoogleSiteVerification', $metaGoogleSiteVerification)
+                ->with('metaAuthor', $metaAuthor)
+                ->with('metaImage', $metaImage)
+                ->with('metaDescription', $metaDescription)
+                ->with('metaKeywords', $metaKeywords)
+                ->with('metaSchemaName', $metaSchemaName)
+                ->with('metaSchemaImage', $metaSchemaImage)
+                ->with('metaSchemaDescription', $metaSchemaDescription);
+});
+
+Route::get('/home', function () {
+    return view('home.index');
 });
 
 
-Route::get('/app', function () {
-    return view('welcome');
-});
+

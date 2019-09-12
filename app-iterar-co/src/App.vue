@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/home">Vue Home</router-link> |
+      <router-link to="/about">Vue About</router-link>
+      <a href="/home">Laravel Home</a>
     </div>
     <router-view/>
   </div>

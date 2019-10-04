@@ -11,12 +11,18 @@
 |
 */
 
-// Redirects
-Route::get('/', function () {
-    return view('welcome');
-});
+//
+Route::redirect('/', '/home');
+Route::get('/home','Home\HomeController@view');
+Route::get('/shop','ShopController@view');
+Route::get('/admin','AdminController@view');
 
-Route::get('/app/{any}', function () {
+Route::get('/app','AppController@view');
+Route::get('/app/{any}','AppController@view');
+
+
+/*
+Route::middleware('auth:api')->get('/app/{any}', function () {
 
     $metaTitle = 'ITERAR | Emprendimiento y Start Ups';
     $metaDescription = 'ITERAR DESCRIPTION';
@@ -41,10 +47,6 @@ Route::get('/app/{any}', function () {
                 ->with('metaSchemaImage', $metaSchemaImage)
                 ->with('metaSchemaDescription', $metaSchemaDescription);
 });
-
-Route::get('/home', function () {
-    return view('home.index');
-});
-
+*/
 
 
